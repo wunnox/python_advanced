@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+  <!--Inventardaten von Server Andromeda-->
+  <inventar>
+    <server name="raspberryshake">
+      <nrcpu>4</nrcpu>
+      <system>Linux</system>
+      <release>4.4.26-v7+</release>
+      <machine>armv7l</machine>
+      <timestamp>1497797877</timestamp>
+    </server>
+    <server name="UM00365">
+      <nrcpu>4</nrcpu>
+      <release>16.5.0</release>
+      <system>Darwin</system>
+      <machine>x86_64</machine>
+      <timestamp>1499540600</timestamp>
+    </server>
+  </inventar>
