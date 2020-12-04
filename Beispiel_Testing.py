@@ -5,9 +5,10 @@
 #
 # Author: Peter Christen
 #
-# Version: 1.0
+# Version: 1.1
 # 
 # Date: 10.06.2017
+#       04.12.2020 Korrektur angebracht
 #
 # Purpose: Script mit Testing-Funktion
 #
@@ -37,8 +38,6 @@ if args.t:
    #Testmodus
    import doctest
    doctest.testmod(verbose=True)
-   quersumme([1,2,3])
-   quersumme([10,20,30])
 else:
    #Normale Funktion
    print(quersumme(args.s))
