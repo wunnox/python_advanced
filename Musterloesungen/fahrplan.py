@@ -1,3 +1,7 @@
+#!/usr/bin/env python3
+"""
+Die Website search.ch bietet Fahrplanabfragen per API (mit JSON). Wann fährt der nächste öV-Anschluss an Ihren Wohnort?
+"""
 
 import urllib.request
 import json
@@ -20,7 +24,7 @@ u.close()
 jsonline = lines[0].decode('utf-8')
 resp = json.loads(jsonline)
 
-# pprint.pprint(resp)
+pprint.pprint(resp)
 
 if 'stop' in resp:
     if 'name' in resp['stop']:
