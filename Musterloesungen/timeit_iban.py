@@ -3,7 +3,7 @@
 """
 Created on Sun Apr 24 16:22:34 2022
 
-@author: rene
+@author: rene.degen@inodes.ch
 """
 
 import timeit

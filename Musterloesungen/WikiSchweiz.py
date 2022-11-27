@@ -3,7 +3,7 @@
 """
 Created on Thu Dec 30 14:20:39 2021
 
-@author: rene
+@author: rene.degen@inodes.ch
 """
 
 import urllib.request

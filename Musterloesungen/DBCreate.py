@@ -3,7 +3,7 @@
 """
 Created on Fri Apr 29 12:50:50 2022
 
-@author: rene
+@author: rene.degen@inodes.ch
 """
 import sqlite3
 # Verbindung und Cursor erzeugen

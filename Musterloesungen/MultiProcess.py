@@ -3,7 +3,7 @@
 """
 Created on Sat Apr 23 14:30:00 2022
 
-@author: rene
+@author: rene.degen@inodes.ch
 """
 
 from concurrent import futures
