@@ -16,7 +16,7 @@
 #### Lösung: ####
 
 class ScrabbleString(str):  
-    buchtstabenwerte1987 = {'ENSIRTUAD':1,'HGLO':2,'MBWZ':3,'CFKP':4,'ÄJÜV':6,'ÖX':1,'QY':10}
+    buchtstabenwerte1987 = {'ENSIRTUAD':1,'HGLO':2,'MBWZ':3,'CFKP':4,'ÄJÜV':6,'ÖX':8,'QY':10}
     # iterieren über die Zeichenkette, innerhalb der Zeichenkette über die Buchstabe als key, Wert wie gehabt
     werte = {c:v for cl,v in buchtstabenwerte1987.items() for c in cl}
     
@@ -28,7 +28,7 @@ class ScrabbleString(str):
             'MBWZ': 3,
             'CFKP': 4,
             'ÄJÜV': 6,
-            'ÖX'  : 1,
+            'ÖX'  : 8,
             'QY'  :10}.items():
         werte.update(dict.fromkeys(list(k),v))
     """

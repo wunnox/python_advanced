@@ -23,7 +23,7 @@ class ScrabbleString(str):
             'MBWZ':3,
             'CFKP':4,
             'ÄJÜV': 6,
-            'ÖX': 1,
+            'ÖX': 8,
             'QY': 10}.items():
         werte.update(dict.fromkeys(list(k),v))
         # werte |= dict.fromkeys(list(k),v)	# Ab Python 3.9
@@ -36,6 +36,7 @@ class ScrabbleString(str):
         return v
 
     def __lt__(self,other):
+	# Type Cast von other, damit mit normalen Zeichenketten verglichen werden kann
         return self.wert() < (ScrabbleString(other)).wert()
     
     def __gt__(self,other):
@@ -63,8 +64,9 @@ if (str1>str2):
 for zeichenkette in ['Heiligabend', 'Ostermontag']:
     print (zeichenkette, (ScrabbleString(zeichenkette)).wert())
     
-print(ScrabbleString('Lokationsstammdatenverzeichnis').wert())
     
+print(ScrabbleString('Lokationsstammdatenverzeichnis').wert())
 
-
-
+heute = ScrabbleString("Heute")
+if (heute > "Morgen"):	# hier Vergleich mit normaler Zeichenkette
+    print(f"{heute} ist besser als Morgen")
