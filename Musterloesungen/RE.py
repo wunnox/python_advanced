@@ -17,12 +17,12 @@ quelle='BEV370OD3700.csv'
 auswahljahr = None #'2020'
 
 alle = []   # nur zum Debuggen
-allesVokale = []
-anfangEndeIdentisch = []
-anfangVokal = []
-doppelt = []
-ddoppelt = []
-sonderzeichen = []
+allesVokale = set()
+anfangEndeIdentisch = set()
+anfangVokal = set()
+doppelt = set()
+ddoppelt = set()
+sonderzeichen = set()
 
 with open(quelle, newline='',encoding='utf-8-sig') as csvdatei:
     reader = csv.DictReader(csvdatei)
@@ -31,31 +31,32 @@ with open(quelle, newline='',encoding='utf-8-sig') as csvdatei:
         vorname=eintrag['Vorname']
         alle.append(vorname)
         # Name enthält alle Vokale
-	# Hinweis: muss mit lower() normalisiert werden, da sonst z.B. A und a doppelt gezählt werden
+	    # Hinweis: muss mit lower() normalisiert werden,
+        # da sonst z.B. A und a doppelt gezählt werden
         if len(set(re.findall(r"[aeiou]", vorname.lower(), re.IGNORECASE)))==5:
             if vorname not in allesVokale:
-                allesVokale.append(vorname)
+                allesVokale.add(vorname)
         # Der erste und letzte Buchstabe sind identisch
-        if re.fullmatch(r"(.).*\1", vorname, re.I):
-            anfangEndeIdentisch.append(vorname)
+        if re.fullmatch(r"(.).*\1", vorname, re.IGNORECASE):
+            anfangEndeIdentisch.add(vorname)
         # Der erste Buchstabe ist ein Vokal
-        if re.match(r"[aeiou]", vorname, re.I):
-            anfangVokal.append(vorname)
+        if re.match(r"[aeiou]", vorname, re.IGNORECASE):
+            anfangVokal.add(vorname)
         # Doppelter Buchstabe
-        if re.search(r"(.)\1", vorname, re.I):
-            doppelt.append(vorname)
+        if re.search(r"(.)\1", vorname, re.IGNORECASE):
+            doppelt.add(vorname)
         # Doppelter doppelter Buchstabe
-        if re.search(r"(.)\1.*(.)\2", vorname, re.I):
-            ddoppelt.append(vorname)
+        if re.search(r"(.)\1.*(.)\2", vorname, re.IGNORECASE):
+            ddoppelt.add(vorname)
         # Enthält Sonderzeichen, hier alles was nicht A-Z oder - ist
-        if re.search(r"[^a-z-]", vorname, re.I):
-            sonderzeichen.append(vorname)
+        if re.search(r"[^a-z -]", vorname, re.IGNORECASE):
+            sonderzeichen.add(vorname)
 
 
-print("Mit allen Vokalen:               {:>4d}".format(len(set(allesVokale))))	# set hier redundant, da Duplikate nicht Eingetragen werden
-print("Anfangs- und Endbuchstabe gleich:{:>4d}".format(len(set(anfangEndeIdentisch))))
-print("Beginnt mit Vokal:               {:>4d}".format(len(set(anfangVokal))))
-print("doppelter Buchstabe:             {:>4d}".format(len(set(doppelt))))
-print("doppelt doppelte Buchstaben:     {:>4d}".format(len(set(ddoppelt))))
-print("Sonderzeichen                    {:>4d}".format(len(set(sonderzeichen))))
+print(f"Mit allen Vokalen:               {len(allesVokale):>4d}")
+print(f"Anfangs- und Endbuchstabe gleich:{len(anfangEndeIdentisch):>4d}")
+print(f"Beginnt mit Vokal:               {len(anfangVokal):>4d}")
+print(f"doppelter Buchstabe:             {len(doppelt):>4d}")
+print(f"doppelt doppelte Buchstaben:     {len(ddoppelt):>4d}")
+print(f"Sonderzeichen                    {len(sonderzeichen):>4d}")
 
