@@ -27,7 +27,7 @@ def sntp_client(host = NTP_SERVER, port = NTP_PORT):
  
         t = struct.unpack( "!12I", data )[10]
         t -= TIME1970
-        return time.strftime('%Y-%m-%d %H:%M:%S')    
+        return time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(t))    
  
 if __name__ == "__main__":
         print(sntp_client())

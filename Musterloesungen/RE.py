@@ -33,7 +33,7 @@ with open(quelle, newline='',encoding='utf-8-sig') as csvdatei:
         # Name enthält alle Vokale
 	    # Hinweis: muss mit lower() normalisiert werden,
         # da sonst z.B. A und a doppelt gezählt werden
-        if len(set(re.findall(r"[aeiou]", vorname.lower(), re.IGNORECASE)))==5:
+        if len(set(re.findall(r"[aeiou]", vorname.lower())))==5:
             if vorname not in allesVokale:
                 allesVokale.add(vorname)
         # Der erste und letzte Buchstabe sind identisch
