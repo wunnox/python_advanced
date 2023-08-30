@@ -13,6 +13,27 @@ Prüfziffer-Berechnung: https://www.gs1.org/services/how-calculate-check-digit-m
 import re
     
 def validiere(ahv13, normalisiert=False):
+    """ Validiert eine AHV-Nummer
+
+    Parameters
+    ----------
+    ahv13 : string
+	AHV-Nummer im Format AHV 13.
+    normalisiert : boolean, optional
+	Ist AHV13-Nummer normalisiert, also rein numerisch. Vorgabe False.
+
+    Raises
+    ------
+    ValueError
+	Bei falschen Format.
+
+    Returns
+    -------
+    TYPE
+	True falls AHV-Nummer korrekt (Format und Prüfziffer).
+
+    """
+
     if not normalisiert:
         # entferne white space
         ahv13 = ahv13.strip()
