@@ -11,12 +11,9 @@ class Fibonacci:
         self.MaxN = max_n
         self.N = 0
         self.A = 0
-        self.B = 0
+        self.B = 1
 
     def __iter__(self):
-        self.N = 0
-        self.A = 0
-        self.B = 1
         return self
 
     def __next__(self):
