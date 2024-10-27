@@ -3,6 +3,12 @@
 """
 Created on Tue Jan 25 19:31:33 2022
 
+Die Opoen data Seite der Stadt Zürich "https://data.stadt-zuerich.ch/dataset/bev_vornamen_baby_od3700"
+bietet "Alle nach Geschlecht und Geburtsjahr
+aggregierten Vornamen von Neugeborenen mit Wohnsitz in der Stadt Zürich seit 1993."
+an.
+
+Geben Sie die 15 häufigsten Vornamen des Jahres 2023 aus
 @author: rene
 """
 
@@ -11,7 +17,7 @@ import matplotlib.pyplot as plt
 
 quelle='https://data.stadt-zuerich.ch/dataset/bev_vornamen_baby_od3700/download/BEV370OD3700.csv'
 limite = 15
-auswahljahr = None # 1996 #2022
+auswahljahr = 2023  # None für alle
 
 namen = pd.read_csv(quelle, encoding='utf-8-sig')
 
