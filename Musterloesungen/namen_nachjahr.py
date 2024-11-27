@@ -25,7 +25,7 @@ eingabe_datei = {
     }
 
 sex='m'
-pruef_name='Alain'
+pruef_name='René'
 
 x = []
 y = []
@@ -44,6 +44,6 @@ with open(eingabe_datei[sex], encoding='utf-8-sig') as datasource:
 plt.bar(x,y)
 plt.xlabel('Jahr')
 plt.ylabel('Anzahl')
-plt.title(f'Häufigkeit "{pruef_name}" nach Geburtsjahr')
+plt.title(f'Häufigkeit "{pruef_name}" nach Geburtsjahr (Stand {year})')
 plt.savefig(f'{pruef_name}.png')
 plt.show()

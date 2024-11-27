@@ -65,8 +65,6 @@ for zeichenkette in ['Heiligabend', 'Ostermontag']:
     print (zeichenkette, (ScrabbleString(zeichenkette)).wert())
     
     
-print(ScrabbleString('Lokationsstammdatenverzeichnis').wert())
-
 heute = ScrabbleString("Heute")
 if (heute > "Morgen"):	# hier Vergleich mit normaler Zeichenkette
     print(f"{heute} ist besser als Morgen")
